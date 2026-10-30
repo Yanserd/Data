@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBA TechStore - Mockup Web Interactivo 1000x2000 px</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating Photoshop Slice Inspector & Tool Panel -->
+  <aside class="ps-toolbar">
+    <div class="ps-badge">
+      <span class="ps-icon">Ps</span>
+      <span>Mockup Photoshop 1000x2000</span>
+    </div>
+    <button id="toggleSlicesBtn" class="ps-btn" title="Ver sectores y guías de Photoshop">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM4 12h16M12 4v16"/></svg>
+      <span>Alternar Sectores (Slices)</span>
+    </button>
+    <a href="TechStore_Mockup_1000x2000.psd" download class="ps-btn ps-btn-accent" title="Descargar archivo PSD real con capas">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span>Descargar .PSD (21 MB)</span>
+    </a>
+  </aside>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Main Web Mockup Frame (Constrained to 1000px width matching PSD) -->
+  <main class="mockup-canvas" id="mockupCanvas">
+
+    <!-- SECTOR 01: HEADER -->
+    <header class="section-slice slice-header" id="slice-header" data-slice="01 [Sector Header: 1000x80 px]">
+      <div class="header-container">
+        <!-- Logo -->
+        <a href="#slice-header" class="logo-box">
+          <div class="tech-cube">
+            <div class="cube-inner"></div>
+          </div>
+          <div class="logo-text">
+            <span class="logo-dba">DBA</span>
+            <span class="logo-brand">TECHSTORE</span>
+            <small class="logo-sub">INNOVACIÓN & GADGETS</small>
+          </div>
+        </a>
+
+        <!-- Menu Horizontal Interactivo -->
+        <nav class="nav-menu">
+          <a href="#slice-hero" class="nav-item active">INICIO</a>
+          <a href="#slice-products" class="nav-item">PRODUCTOS</a>
+          <a href="#slice-promo" class="nav-item nav-hot">
+            OFERTAS <span class="hot-badge">HOT</span>
+          </a>
+          <a href="#slice-benefits" class="nav-item">BENEFICIOS</a>
+          <a href="#slice-testimonials" class="nav-item">SOPORTE</a>
+          <a href="#slice-footer" class="nav-item">CONTACTO</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <button class="action-btn" title="Buscar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          <button class="action-btn cart-btn" id="cartButton" title="Carrito de compras">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-badge" id="cartCount">3</span>
+          </button>
+          <button class="action-btn" title="Cuenta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTOR 02: HERO BANNER -->
+    <section class="section-slice slice-hero" id="slice-hero" data-slice="02 [Sector Banner Hero: 1000x440 px]">
+      <div class="hero-content">
+        <div class="hero-info">
+          <div class="tag-pill">⚡ LANZAMIENTO EXCLUSIVO 2026</div>
+          <h1 class="hero-title">
+            AUDIO PRO ULTRA<br>
+            <span class="gradient-text">SONIDO INMERSIVO 8D</span>
+          </h1>
+          <p class="hero-desc">
+            Cancelación activa de ruido inteligente con IA, diafragmas de titanio de 50mm y audio espacial de 360 grados. Hasta 48 horas de autonomía con carga ultra rápida.
+          </p>
+
+          <div class="hero-chips">
+            <span class="chip">ANC Adaptativa</span>
+            <span class="chip">Titanio 50mm</span>
+            <span class="chip">48h Batería</span>
+            <span class="chip">Bluetooth 5.4</span>
+          </div>
+
+          <!-- Zona Interactiva Principal: Botón CTA -->
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="buyHeroBtn">
+              <span>COMPRAR AHORA</span>
+              <span class="btn-price">$249.99</span>
+              <span class="btn-arrow">➔</span>
+            </button>
+            <button class="btn btn-secondary" id="specsBtn">
+              VER ESPECIFICACIONES
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Gadget 3D Graphic -->
+        <div class="hero-visual">
+          <div class="ambient-glow"></div>
+          <div class="headphones-wrapper">
+            <div class="sound-ring ring-1"></div>
+            <div class="sound-ring ring-2"></div>
+            <div class="sound-ring ring-3"></div>
+            <div class="headphones-art">
+              <div class="headband"></div>
+              <div class="earcup left-cup"><span class="cup-logo">X</span></div>
+              <div class="earcup right-cup"><span class="cup-logo">X</span></div>
+            </div>
+            <div class="headphones-shadow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTOR 03: BENEFICIOS / VECTORES -->
+    <section class="section-slice slice-benefits" id="slice-benefits" data-slice="03 [Sector Beneficios: 1000x170 px]">
+      <div class="section-intro">
+        <small class="intro-tag">VENTAJAS EXCLUSIVAS DE COMPRA</small>
+        <h2 class="section-title">¿POR QUÉ MILES ELIGEN TECHSTORE?</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Envíos Express Gratis</h3>
+          <p>Entregas prioritarias en 24/48h sin costo a nivel nacional.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Garantía Oficial 2 Años</h3>
+          <p>Cobertura completa y reemplazo inmediato sin trámites.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Pago Cifrado 256-bit</h3>
+          <p>Transacciones blindadas con protección antifraude total.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          </div>
+          <h3>Soporte Técnico 24/7</h3>
+          <p>Asesoría especializada de ingenieros en vivo los 365 días.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTOR 04: PRODUCTOS DESTACADOS -->
+    <section class="section-slice slice-products" id="slice-products" data-slice="04 [Sector Productos: 1000x530 px]">
+      <div class="products-header">
+        <div>
+          <small class="intro-tag">CATÁLOGO SELECCIONADO</small>
+          <h2 class="section-title">GADGETS MÁS VENDIDOS DE LA SEMANA</h2>
+        </div>
+        <!-- Filtros interactivos -->
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-pill active" data-filter="all">TODOS</button>
+          <button class="cat-pill" data-filter="audio">AUDIO</button>
+          <button class="cat-pill" data-filter="watches">SMARTWATCHES</button>
+          <button class="cat-pill" data-filter="gaming">GAMING</button>
+          <button class="cat-pill" data-filter="accessories">ACCESORIOS</button>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <!-- Card 1 -->
+        <article class="product-card" data-category="watches">
+          <span class="card-badge badge-coral">-25% OFERTA</span>
+          <div class="gadget-preview">
+            <div class="gadget-watch">
+              <div class="watch-screen">
+                <div class="ring r-coral"></div>
+                <div class="ring r-cyan"></div>
+                <div class="ring r-green"></div>
+                <span class="time">10:42</span>
+                <span class="bpm">78 bpm</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="prod-title">Apex Watch Pro Gen 3</h3>
+          <p class="prod-desc">Pantalla AMOLED Retina, GPS dual & sensor SpO2.</p>
+          <div class="prod-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(142 reviews)</span>
+          </div>
+          <div class="prod-pricing">
+            <span class="price-now">$199.99</span>
+            <span class="price-old">$249.99</span>
+          </div>
+          <button class="btn-card add-cart-btn" data-name="Apex Watch Pro Gen 3" data-price="199.99">
+            Añadir al Carrito
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card" data-category="audio">
+          <span class="card-badge badge-cyan">TOP VENTAS</span>
+          <div class="gadget-preview">
+            <div class="gadget-earbuds">
+              <div class="case-body">
+                <div class="bud-well left"></div>
+                <div class="bud-well right"></div>
+                <div class="led-dot"></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="prod-title">Nova Wave ANC X</h3>
+          <p class="prod-desc">Cancelación híbrida, estuche Qi inalámbrico.</p>
+          <div class="prod-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(389 reviews)</span>
+          </div>
+          <div class="prod-pricing">
+            <span class="price-now">$149.99</span>
+            <span class="price-old">$189.99</span>
+          </div>
+          <button class="btn-card add-cart-btn" data-name="Nova Wave ANC X" data-price="149.99">
+            Añadir al Carrito
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card" data-category="gaming">
+          <span class="card-badge badge-green">NUEVO 2026</span>
+          <div class="gadget-preview">
+            <div class="gadget-keyboard">
+              <div class="kb-knob"></div>
+              <div class="kb-grid">
+                <span class="k-cyan"></span><span class="k-cyan"></span><span class="k-blue"></span><span class="k-blue"></span>
+                <span class="k-purple"></span><span class="k-purple"></span><span class="k-coral"></span><span class="k-coral"></span>
+              </div>
+            </div>
+          </div>
+          <h3 class="prod-title">CyberMech RGB Pro</h3>
+          <p class="prod-desc">Switches ópticos hotswap, triple conectividad.</p>
+          <div class="prod-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">(98 reviews)</span>
+          </div>
+          <div class="prod-pricing">
+            <span class="price-now">$119.99</span>
+            <span class="price-old">$139.99</span>
+          </div>
+          <button class="btn-card add-cart-btn" data-name="CyberMech RGB Pro" data-price="119.99">
+            Añadir al Carrito
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTOR 05: ZONA INTERACTIVA / PROMO FLASH -->
+    <section class="section-slice slice-promo" id="slice-promo" data-slice="05 [Zona Interactiva Flash: 1000x240 px]">
+      <div class="promo-box">
+        <div class="promo-content">
+          <span class="promo-badge">⚡ ZONA INTERACTIVA: OFERTA FLASH EXCLUSIVA</span>
+          <h2 class="promo-title">DESCUENTO DE HASTA 40% EN TU PRIMERA COMPRA</h2>
+          <p class="promo-desc">Ingresa tu correo para desbloquear tu cupón interactivo. Tiempo restante antes del cierre:</p>
+
+          <!-- Contador interactivo regresivo en vivo -->
+          <div class="countdown-row">
+            <div class="time-card">
+              <span class="num" id="hoursVal">08</span>
+              <span class="lbl">HORAS</span>
+            </div>
+            <span class="dots">:</span>
+            <div class="time-card">
+              <span class="num" id="minsVal">42</span>
+              <span class="lbl">MINUTOS</span>
+            </div>
+            <span class="dots">:</span>
+            <div class="time-card">
+              <span class="num" id="secsVal">19</span>
+              <span class="lbl">SEGUNDOS</span>
+            </div>
+          </div>
+
+          <!-- Formulario interactivo con botón hover y validación -->
+          <form class="promo-form" id="couponForm">
+            <div class="input-wrapper">
+              <input type="email" id="emailInput" placeholder="tunombre@correo.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-coupon">
+              CANJEAR CUPÓN AHORA ➔
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTOR 06: TESTIMONIOS -->
+    <section class="section-slice slice-testimonials" id="slice-testimonials" data-slice="06 [Sector Testimonios: 1000x200 px]">
+      <div class="section-intro">
+        <small class="intro-tag">FEEDBACK DE LA COMUNIDAD</small>
+        <h2 class="section-title">EXPERIENCIAS REALES DE NUESTROS CLIENTES</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="test-card">
+          <div class="test-head">
+            <div class="avatar">CM</div>
+            <div>
+              <h4>Carlos Mendoza</h4>
+              <small>Comprador Verificado • Audio Pro Ultra</small>
+            </div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+          <p class="test-quote">
+            "Los auriculares llegaron en menos de 24 horas. La cancelación activa de ruido supera a auriculares del doble de precio. La calidad de sonido en juegos y música es insuperable."
+          </p>
+        </div>
+
+        <div class="test-card">
+          <div class="test-head">
+            <div class="avatar">VR</div>
+            <div>
+              <h4>Valentina Rojas</h4>
+              <small>Creadora Digital • Apex Watch Pro</small>
+            </div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+          <p class="test-quote">
+            "El Apex Watch Pro es perfecto para mi rutina de entrenamiento y producción digital. La pantalla AMOLED se lee con total claridad bajo el sol y la batería dura más de 5 días seguidos."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTOR 07: FOOTER -->
+    <footer class="section-slice slice-footer" id="slice-footer" data-slice="07 [Sector Footer: 1000x260 px]">
+      <div class="footer-top">
+        <!-- Col 1 -->
+        <div class="footer-col footer-brand-col">
+          <div class="logo-box">
+            <div class="tech-cube"><div class="cube-inner"></div></div>
+            <div class="logo-text">
+              <span class="logo-dba">DBA</span>
+              <span class="logo-brand">TECHSTORE</span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            Distribuidor oficial de tecnología, periféricos de alta gama y gadgets de última generación con garantía certificada.
+          </p>
+          <p class="footer-contact">
+            📞 +1 (800) 456-7890<br>
+            ✉ contacto@techstore.com
+          </p>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4>PRODUCTOS</h4>
+          <ul>
+            <li><a href="#slice-hero">Auriculares Studio</a></li>
+            <li><a href="#slice-products">Smartwatches</a></li>
+            <li><a href="#slice-products">Teclados Mecánicos</a></li>
+            <li><a href="#slice-hero">Audio Espacial</a></li>
+            <li><a href="#slice-promo">Ofertas Flash</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4>SOPORTE</h4>
+          <ul>
+            <li><a href="#slice-benefits">Centro de Ayuda</a></li>
+            <li><a href="#slice-benefits">Estado del Pedido</a></li>
+            <li><a href="#slice-benefits">Políticas de Garantía</a></li>
+            <li><a href="#slice-benefits">Devoluciones</a></li>
+            <li><a href="#slice-footer">Contacto 24/7</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4>COMPAÑÍA</h4>
+          <ul>
+            <li><a href="#slice-benefits">Sobre Nosotros</a></li>
+            <li><a href="#slice-footer">Términos de Servicio</a></li>
+            <li><a href="#slice-footer">Privacidad</a></li>
+            <li><a href="#slice-testimonials">Prensa y Blog</a></li>
+            <li><a href="#slice-benefits">Sustentabilidad</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="pay-methods">
+          <span class="pay-pill">VISA</span>
+          <span class="pay-pill">MASTERCARD</span>
+          <span class="pay-pill">PAYPAL</span>
+          <span class="pay-pill">APPLE PAY</span>
+          <span class="pay-pill">BITCOIN</span>
+        </div>
+
+        <div class="social-links">
+          <a href="#">INSTAGRAM</a>
+          <a href="#">TWITTER / X</a>
+          <a href="#">YOUTUBE</a>
+          <a href="#">DISCORD</a>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <span>© 2026 DBA TechStore. Todos los derechos reservados. Archivo Mockup PSD 1000x2000 px.</span>
+        <span>Diseño Web Profesional Exportable a HTML con Sectores</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
